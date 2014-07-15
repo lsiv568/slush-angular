@@ -142,7 +142,9 @@ gulp.task('dist', ['vendors', 'assets', 'styles-dist', 'scripts-dist'], function
  */
 gulp.task('statics', g.serve({
   port: 3000,
-  root: ['./.tmp', './.tmp/src/app', './src/app', './bower_components']
+  root: ['./.tmp', './.tmp/src/app', './src/app', './bower_components']<% if (html5mode) { %>,
+  middlewares: [require('connect-modrewrite')(['!\\.\\w+$ /index.html'])]
+  <% } %>
 }));
 
 /**

@@ -39,7 +39,8 @@ gulp.task('default', function (done) {
       {name: 'Sass', value: 'sass'}
     ]},
     {type: 'confirm', name: 'coffee', message: 'Do you want to use CoffeeScript in your app?', default: false},
-    {type: 'confirm', name: 'example', message: 'Do you want to include a Todo List example in your app?', default: true}
+    {type: 'confirm', name: 'example', message: 'Do you want to include a Todo List example in your app?', default: true},
+    {type: 'confirm', name: 'html5mode', message: 'Do you want your app to run in html5mode?', default: false}
   ],
   function (answers) {
     answers.nameDashed = _.slugify(answers.name);

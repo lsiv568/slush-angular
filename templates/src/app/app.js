@@ -4,7 +4,7 @@ angular.module('<%= modulename %>', [
   <% if (example) { %>'<%= modulename %>.todo',
   <% } %>'<%= nameDashed %>-templates'
 ])<% if (example) { %>
-.config(function ($routeProvider) {
+.config(function ($routeProvider <% if (html5mode) { %>, $locationProvider <% } %> ){
   'use strict';
   $routeProvider
     .when('/todo', {
@@ -14,4 +14,7 @@ angular.module('<%= modulename %>', [
     .otherwise({
       redirectTo: '/todo'
     });
+    <% if (html5mode) { %>
+    $locationProvider.html5mode(true);
+    <% } %>
 })<% } %>;

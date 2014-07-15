@@ -32,7 +32,8 @@
     "<%= name %>": "<%= styleData.extraDependencies[name] %>",<%
       });
     } %><% if (coffee) { %>
-    "gulp-coffee": "^1.4.3",<% } %>
+    "gulp-coffee": "^1.4.3",<% } %><% if (html5mode) { %>
+    "connect-modrewrite": "~0.7.6",<% } %>
     "gulp-minify-css": "~0.3.4",
     "gulp-csslint": "~0.1.4",
     "event-stream": "^3.1.5",
